@@ -74,6 +74,8 @@ public class TestBSTMap {
     public void sanityPutTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         b.put("hi", 1);
+        b.put("A", 1);
+        assertTrue(b.size() == 2);
         assertTrue(b.containsKey("hi") && b.get("hi") != null);
     }
 

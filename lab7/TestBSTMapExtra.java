@@ -1,10 +1,21 @@
-import java.util.Set;
-import java.util.HashSet;
-import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import static org.junit.Assert.*;
 
 /** Tests of optional parts of lab 8. */
 public class TestBSTMapExtra {
+
+    @Test
+    public void printInOrderTest() {
+        BSTMap<String, Integer> b = new BSTMap<String, Integer>();
+        for (int i = 0; i < 455; i++) {
+            b.put("hi" + i, 1);
+        }
+        b.printInOrder();
+    }
 
     /*
     * Sanity test for keySet, only here because it's optional
@@ -43,6 +54,7 @@ public class TestBSTMapExtra {
         q.put("a","a");
         q.put("d","a");
         q.put("e","a"); // a b c d e
+        q.put("c1","a");
         assertTrue(null != q.remove("c"));
         assertFalse(q.containsKey("c"));
         assertTrue(q.containsKey("a"));
